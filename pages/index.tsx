@@ -1,6 +1,6 @@
 import CheckoutRoute from "@/hocs/CheckoutRoute";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Checkout = () => {
   const [paymentIntent, setPaymentIntent] = useState(null);
