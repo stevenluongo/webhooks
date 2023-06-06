@@ -1,5 +1,6 @@
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
+import { baseURL } from "@/lib/url";
 let socket;
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
 
   const socketInitializer = async () => {
     await fetch("/api/socket");
-    socket = io();
+    socket = io(baseURL);
 
     socket.on("connect", () => {
       console.log("connected");
