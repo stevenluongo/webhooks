@@ -1,5 +1,3 @@
-import { Server } from "Socket.IO";
-
 const SocketHandler = (req, res) => {
   if (res.socket.server.io) {
     const io = res.socket.server.io;
