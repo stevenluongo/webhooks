@@ -24,6 +24,10 @@ export default async (request: NextApiRequest, response) => {
   const buf = await buffer(request);
   const sig = request.headers["stripe-signature"];
 
+  const host = request.headers["host"];
+
+  console.log(host);
+
   let event;
 
   try {
