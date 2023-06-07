@@ -11,16 +11,19 @@ const Home = () => {
   }, []);
 
   const socketInitializer = async () => {
+    console.log(window.location.host);
     await fetch("/api/socket");
     socket = io(baseURL);
 
-    socket.on("connect", () => {
-      console.log("connected");
-    });
+    console.log(socket);
 
-    socket.on("update-input", (msg) => {
-      setInput(msg);
-    });
+    // socket.on("connect", () => {
+    //   console.log("connected");
+    // });
+
+    // socket.on("update-input", (msg) => {
+    //   setInput(msg);
+    // });
   };
 
   const onChangeHandler = (e) => {
